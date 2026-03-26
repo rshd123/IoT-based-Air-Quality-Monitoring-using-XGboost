@@ -4,8 +4,8 @@
 #include "xgb_model.h"   // Your converted XGBoost model
 
 // ===== WIFI =====
-const char* ssid = "Airtel_mush_1896";
-const char* password = "CfarithaC@1";
+const char* ssid = "Srivarshan's iphone";
+const char* password = "1231231008";
 
 // ===== DHT11 =====
 #define DHTPIN 4
@@ -30,17 +30,17 @@ void setup() {
 
   dht.begin();
 
-  WiFi.begin(ssid, password);
-  Serial.print("Connecting to WiFi");
+  // WiFi.begin(ssid, password);
+  // Serial.print("Connecting to WiFi");
 
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
+  // while (WiFi.status() != WL_CONNECTED) {
+  //   delay(500);
+  //   Serial.print(".");
+  // }
 
-  Serial.println("\nWiFi Connected!");
-  Serial.print("IP Address: ");
-  Serial.println(WiFi.localIP());
+  // Serial.println("\nWiFi Connected!");
+  // Serial.print("IP Address: ");
+  // Serial.println(WiFi.localIP());
 
   pmsSerial.begin(9600, SERIAL_8N1, PMS_RX, PMS_TX);
 }
@@ -66,9 +66,9 @@ void loop() {
   Serial.println(humidity);
 
   // ----- Read MQ135 -----
-  int gasValue = analogRead(MQ135_PIN);
-  Serial.print("MQ135 Analog: ");
-  Serial.println(gasValue);
+  // int gasValue = analogRead(MQ135_PIN);
+  // Serial.print("MQ135 Analog: ");
+  // Serial.println(gasValue);
 
   // ----- Read PMS7003 -----
   uint16_t pm25 = 0;
@@ -132,7 +132,7 @@ void loop() {
     case 0: aqiLabel = "Good"; break;
     case 1: aqiLabel = "Satisfactory"; break;
     case 2: aqiLabel = "Moderate"; break;
-    case 3: aqiLabel = "Poor"; break;
+    case 3: aqiLabel = "Good"; break;
     case 4: aqiLabel = "Very Poor"; break;
     case 5: aqiLabel = "Severe"; break;
     default: aqiLabel = "Unknown"; break;
